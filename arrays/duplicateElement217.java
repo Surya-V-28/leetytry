@@ -10,10 +10,6 @@ public class  duplicateElement217 {
         helps.bruteforce(arrs);
         helps.hashmapSolved(arrs);
         helps.betterapprochHash(arrs);
-        
-
-
-        
 }
 }
 
@@ -90,8 +86,5 @@ class Helper {
         System.out.print("False");
         }
     }
-
-
-
     
 }
