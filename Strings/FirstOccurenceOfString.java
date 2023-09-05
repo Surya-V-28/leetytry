@@ -2,52 +2,49 @@
 
 public class FirstOccurenceOfString {
     public static void main(String[] args) {
-        String GiveInputs = "abw",compareInputs= "w";
-        int i=0,j1  =0;
-        
-        boolean check = false;
-
-        // for(i=0;i<GiveInputs.length()-1;i++){
-        //     while( compareInputs.charAt(j1) ==GiveInputs.charAt(i) && j1 != compareInputs.length()){
-        //         System.out.println("This is invertal components   " + j1+ " this is J1  " + i + "  this is I value");
-        //         System.out.println("The lettter in give  " + GiveInputs.charAt(i) +" Is Compared With " + compareInputs.charAt(j1));
-        //         i++;
-        //         j1++;
-        //         if(j1==compareInputs.length() && j1==j1-1){
-        //             check = true;
-        //             break;
-        //         }
-        //     }
+        String intput = "mississippi",compare= "issipi";
+       
     
-       while(i!=compareInputs.length()) {
-        if(compareInputs.length() ==1 && GiveInputs.length() ==1 && compareInputs == GiveInputs){
-            check=true;
-            break;
-        }
-        else{
-        for(int j=0;j<GiveInputs.length()-1;j++){
-            if(compareInputs.charAt(i) == GiveInputs.charAt(j)&& i!=compareInputs.length()){
-                i++;
-                check = true;
-                if(i==compareInputs.length()){
-                  break;
-                }
-            }
-            else {
-                i=0;
-                check=false;
-            }
-        }
+    }
 }
-        if(check==false){
-            break;
+
+
+class FirstOccurenceOfStringWays  {
+    static void myOwnMethod(String intput,String compare) {
+        boolean check = false;
+        for(int i=0;i<intput.length()-compare.length()+1;i++){
+            if(intput.charAt(i) ==compare.charAt(0)){
+                int count =0;
+                 for(int j=0;j<compare.length();j++){
+                    if(intput.charAt(i+j)==compare.charAt(j) &&i+j<intput.length()-1){
+                        System.out.println(i);
+                        count++;
+                    }
+                    if(count ==compare.length()) {
+                        System.out.println(i);
+                        break;
+                    }
+                 }
+            }
+            
         }
-       }
-       if(check){
-        System.out.println("Corrects");
-       }
-       else {
-        System.out.println("Wrong");
-       }
+
+    }
+
+    static void subStringMethod(String intput, String compare){
+        if(intput.length()<compare.length()){
+            System.out.println("-1");
+        }
+        if(intput.equals(compare)){
+            System.out.println("0");
+        }
+
+        for(int i=0;i<intput.length()-compare.length();i++){
+            if(intput.substring(i,i+compare.length()).equals(compare)){
+                System.out.println(i);
+            }
+        }
+        System.out.println("False");
+
     }
 }

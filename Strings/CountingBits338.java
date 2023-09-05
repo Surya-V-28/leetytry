@@ -21,7 +21,6 @@ class CountingBits338Ways {
             int count = 0, num = i;
             while(num>0){
                 num = num & (num-1);
-                System.out.println(num);
                 count++;
             }
             arrs[i]=count;
