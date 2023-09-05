@@ -9,7 +9,6 @@ public class LengthOfLastWord {
         String got =  "  luffy   chi   is still joyboy                Helks      dema   ";
         LengthOfLastWordWays.someNewWayWithSplit(got);
         
-        
     }
 }
 
@@ -37,4 +36,6 @@ class LengthOfLastWordWays {
         StringHelper.StringPrinterS(revi);
         System.out.println(revi[revi.length-1].length());
      }
+
+
 }
