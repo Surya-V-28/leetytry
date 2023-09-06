@@ -3,35 +3,38 @@
 
 import java.util.*;
 
-public class possibleWays {
-    public static void  main(String args[]){
-        int input = 4;
 
+public class BasicTracking {
+    public static void main(String args[]){
+        System.out.println("wORKING");
+
+        int number = 5;
+        int index =0;
+        Integer[] start = {-1,-1,-1};
         ArrayList<Integer[]> result = new ArrayList<Integer[]>();
-
-        backtrack(0, input, new Integer[] {-1, -1,-1,-1}, result);
-
+        backTracking(index,number,start,result);
         System.out.println("Result:\n" + resultToString(result));
     }
-    private static void backtrack(int index, int input, Integer[] previousCombination, ArrayList<Integer[]> result) {
-        if (index >= input) {
+
+    public static void backTracking(int index,int inputs, Integer[] previousCombination , ArrayList<Integer[]>  reuslt){
+        if(index>=3){
             return;
         }
-
-        // Possible 0 - Input
-        for (int i = 0; i <= input; ++i) {
+        for(int i=0;i<=5;i++){
             Integer[] newCombination = previousCombination.clone();
             newCombination[index] = i;
 
-            if (index == input - 1) {
-                if (arraySum(newCombination) == input) {
-                    result.add(newCombination);
+            // when index reaching the max value count the final result total equal to normal total 
+            if(index == 2){
+                if(arraySum(newCombination)==5){
+                    reuslt.add(newCombination);
                 }
             }
-            
-            backtrack(index + 1, input, newCombination, result);
+            backTracking(index+1,3,newCombination,reuslt);
+
         }
     }
+
 
     private static int arraySum(Integer[] numbers) {
         int r = 0;
@@ -60,6 +63,3 @@ public class possibleWays {
         return r;
     }
 }
-
-
-
