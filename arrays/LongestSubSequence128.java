@@ -43,19 +43,20 @@ class LongestSubSequence128Ways  {
     static void BetterUsingSort(int[] nums) {
         // here we need to use the three basic code case for the working 
         int LargestSmall = Integer.MIN_VALUE;
-        int count = 0;
+        int count = 1;
         int MaxLength = 1;
         Arrays.sort(nums);
-        arrayhelper.arrayPrinter(nums);
+       
         LargestSmall = nums[0];
         for(int i=0;i<nums.length;i++){
             if(nums[i]-1==LargestSmall){
-                LargestSmall = nums[i];
                 count++;
+                LargestSmall = nums[i];
 
             }else if(nums[i]-1!=LargestSmall){
+               
+                count=1;
                 LargestSmall = nums[i];
-                count=0;
             }
             MaxLength =Math.max(MaxLength,count);
         }
@@ -63,6 +64,6 @@ class LongestSubSequence128Ways  {
     }
 
     static void BruteForce(int[] nums){
-        
+
     }
 }
