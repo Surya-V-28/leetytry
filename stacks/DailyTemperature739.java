@@ -7,23 +7,20 @@ import java.util.*;
 
 public class DailyTemperature739 {
     public static void main(String args[]){
-        System.out.print("Working");
-        int[] nums = {99,919,99,99,99,99,99,909,919,99,99,99,99,99,99,99,929,99,99,939,99,99,949};
-        Stack<Integer> hashStack = new Stack<>();
-        int[] result  = new int[nums.length-1];
-        for(int i=nums.length-1;i>=0;i--){
-
-            while(!hashStack.isEmpty()&&nums[i] >= nums[hashStack.peek()]){
-                hashStack.pop();
+        int[] nums = {89,62,70,58,47,47,46,76,100,70};
+        int[] nums2 = new int[nums.length];
+        Stack<Integer> hash = new Stack<>();
+        for(int i=0;i<nums.length;i++){
+            while(!hash.isEmpty()&& nums[i] > nums[hash.peek()]){
+                int stvalue = hash.pop();
+                nums2[stvalue] =  i - stvalue;
             }
-
-            while(!hashStack.isEmpty()){result[i] = hashStack.peek()-i;}
-
-            hashStack.push(i);
+            hash.push(i);
+            System.out.println(hash);
         }
+        arrayhelper.arrayPrinter(nums2);
+        arrayhelper.arrayPrinter(nums);
 
-        arrayhelper.arrayPrinter(result);
-        
     }
 }
 
