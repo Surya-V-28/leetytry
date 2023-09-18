@@ -24,8 +24,6 @@ public class DailyTemperature739 {
     }
 }
 
-
-
 class MyDifferentWays  {
     public static void BruteForce(int[] nums ) {
         int[] nums2 = new int[5];
