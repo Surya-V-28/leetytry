@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class RatoateNumber {
     public static void main(String args[]){
-
        // System.out.println("Working with surya");
         String bits16 = "0000000000000000";
         int num = 28;
@@ -17,7 +16,7 @@ public class RatoateNumber {
         String nums = bits16.substring(bits16.length()-roate,bits16.length()) + bits16.substring(0,bits16.length()-roate);
         list.add(Integer.parseInt(nums,2));
         System.out.println(list);
-
-
     }
 }
+
+
