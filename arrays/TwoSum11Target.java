@@ -18,7 +18,6 @@ public class TwoSum11Target {
                 last--;
             }
             else if(nums[start] + nums[last] ==target){
-              
                 break;
             }
         }
