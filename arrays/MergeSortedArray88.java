@@ -1,14 +1,12 @@
 
 
 
-
-import java.util.*;
+import java.util.*; 
 
 
 public class MergeSortedArray88 {
     public static void main(String args[]){
         System.out.println("Welocme to surya working");
-       
         int[] nums1 = {1,2,3,0,0,0};
         int[] nums2 = {2,4,5};
         int i =2,j=2;
@@ -21,18 +19,11 @@ public class MergeSortedArray88 {
             }
             else {
                 nums1[k--] = nums2[j--];
-               
             }
         }
-
         for(int ad : nums1){
                     System.out.println(ad);
            }
-         
-
-
-        
-
     }
 }
 
