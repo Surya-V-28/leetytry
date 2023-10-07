@@ -29,7 +29,6 @@ public class MergeStringAlternate {
                 k++;
                 bol = true;
             }
-
         }
        System.out.println("thid is the value of the  k " + k  + " and this is the j " + j );
        if(k<name2.length()) {
