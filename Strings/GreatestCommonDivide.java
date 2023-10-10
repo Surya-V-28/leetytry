@@ -10,21 +10,24 @@ public class GreatestCommonDivide {
         System.out.println("Wokring surya");
         String news = "";
         String one = "ABCABCDE" , two = "ABCDE";
-        int j=0;
-         int n = Math.max(one.length(),two.length());
-         String maxlenstring  = one.length()==n?one:two;
-         String minlenstring  = one.length()!=n?one:two;
-         System.out.println(minlenstring);
-        for(int i=0;i<n;i++){
-            if(minlenstring.charAt(j) ==maxlenstring.charAt(i) && j<minlenstring.length()){
-                System.out.println(" this IS " + j+" "+  one.charAt(j)+   " i as " + i + " "+ maxlenstring.charAt(i));
-                j++;
-            } else {
-                j=0;
-                System.out.println(" this si the I value " + i );
-                System.out.println(" this IS " + j+" "+  one.charAt(j)+   " i as " + i + " "+ maxlenstring.charAt(i));
-            }
+        String ans = gcdofString(one,two);
+        System.out.println(ans);
+       
+    }
+
+
+
+    public static String gcdofString(String one , String two) {
+        if(one.equals(two)){
+            return one;
+        }
+        if(one.length()<two.length()){
+            return gcdofString(two,one);
         }
 
+        if(one.startsWith(two)){
+            return gcdofString(one.substring(two.length()),two);
+        }
+        return "";
     }
 }
