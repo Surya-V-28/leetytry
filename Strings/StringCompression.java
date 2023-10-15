@@ -36,9 +36,7 @@ public class StringCompression {
         for(int i=0;i<stringBuilder.length();i++){
             nums[i] = ""+stringBuilder.charAt(i);
         }
-        for(String vals : nums){
-            System.out.println(vals);
-        }
+       
     }
     static StringBuilder checkForSingleDigit(int num,StringBuilder stringBuilder){
         String finas = Integer.toString(num);
