@@ -7,7 +7,6 @@ public class RemoveTheStars {
     public static void main(String args[]){
         System.out.println("Working");
         String s = "leet**cod*e";
-
         String res="";
         Stack<Character> stk = new Stack<>();
         for(int i =0;i<s.length();i++){
