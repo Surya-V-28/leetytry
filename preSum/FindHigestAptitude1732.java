@@ -26,5 +26,6 @@ public class FindHigestAptitude1732 {
             sum+=nums[i];
             maxSum = Math.max(maxSum,sum);
         }
+        
     }
 }
