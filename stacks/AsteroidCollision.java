@@ -20,8 +20,7 @@ public class  AsteroidCollision {
         else if(stk.peek()>0 && stk.peek() == -asteroids[i]) stk.pop();
         else if(stk.peek()>0 && asteroids[i]<0) {
             stk.pop();
-        }
-        
+        }   
     }
         System.out.println(stk);
     }
