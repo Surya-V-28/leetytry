@@ -7,31 +7,32 @@ public class DecodeString394 {
 
     public static void main(String args[]) {
         String input = "3[ab]2[bc]";
-        Stack<Integer> inSt = new Stack<Integer>();
-        Stack<String> Stk = new Stack<String>();
+        Stack<Integer> inSt = new Stack<>();
+        Stack<String> Stk = new Stack<>();
+        StringBuilder s = new StringBuilder();
         String prs = "";
-        for(int i=0;i<input.length();i++){
-            if(Character.isDigit(input.charAt(i))){
-                System.out.println(input.charAt(i) + " thi id numbre");
-                inSt.push(Character.getNumericValue(input.charAt(i)));
-            } else {
-               if(input.charAt(i)==']'){
-                while(Stk.peek()!="["){
-                 prs = Stk.pop()+prs+ "";
-                 System.out.println(Stk);
-                }
-                System.out.println(Stk);
-                Stk.pop();
-                System.out.println(prs.substring(0,prs.length())+ "some");
-                prs = prs.substring(0,prs.length());
+        int num = 0;
+        
+        for(char c : input.toCharArray()) {
+            if(Character.isDigit(c)) {
+                num = num * 10 + (c - '0');
+            } else if(c == '[') {
+                inSt.push(num);
+                num = 0;
                 Stk.push(prs);
-                System.out.println(Stk);
-                prs =""; 
-               }
-               Stk.push(input.charAt(i)+"");
+                prs = "";
+            } else if(c == ']') {
+                StringBuilder tempStr = new StringBuilder(Stk.pop());
+                int tempNum = inSt.pop();
+                for(int i = 0; i < tempNum; i++) {
+                    tempStr.append(prs);
+                }
+                prs = tempStr.toString();
+            } else {
+                prs += c;
             }
         }
-        System.out.println(Stk);
-        System.out.println(inSt);
+        
+        System.out.println(prs);
     }
 }
