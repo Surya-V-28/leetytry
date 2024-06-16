@@ -27,7 +27,8 @@ public class MinClimbingStairs {
         for(int i=0;i<cost.length;i++){
             System.out.print(cost[i] + ", ");
         }
-        int anser = Math.min(cost[0],cost[1]);  
+        int anser = Math.min(cost[0],cost[1]); 
+         
     }
 }
 
