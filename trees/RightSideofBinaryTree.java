@@ -1,4 +1,3 @@
-
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -14,6 +13,8 @@
  *     }
  * }
  */
+
+ 
 class Solution {
     List<Integer> arr = new ArrayList<>();
    public void InOrder(TreeNode node,int level){
@@ -29,3 +30,4 @@ class Solution {
        return  arr;
    }
 }
+
