@@ -14,7 +14,6 @@
  * }
  */
 
- 
 class Solution {
     List<Integer> arr = new ArrayList<>();
    public void InOrder(TreeNode node,int level){
