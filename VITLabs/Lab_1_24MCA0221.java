@@ -11,9 +11,6 @@ public class Lab_1_24MCA0221 {
         System.out.print("Enter year: ");
         int year = scanner.nextInt();
         printMonthDays(year, month);
-        
-        
-        
         System.out.print("Program 2: ");
         System.out.print("Enter the number of elements in the array: ");
         int size = scanner.nextInt();
