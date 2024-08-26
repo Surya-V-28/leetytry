@@ -15,12 +15,12 @@ class IndianBank extends RBI {
     String name;
     public void gettingInput() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Account number of the user");
+        System.out.println("Enter the Account number of the user for IndianBank");
         accountNumber = sc.nextLong();
-        System.out.println("Enter the Account Holder Name");
+        System.out.println("Enter the Account Holder Name  for IndianBank");
         sc.nextLine();
         name = sc.nextLine();
-        System.out.println("Enter the Current balance ");
+        System.out.println("Enter the Current balance  for IndianBank ");
         balance = sc.nextDouble();
     
     }
@@ -47,12 +47,12 @@ class ICICBank  extends RBI {
     String name;
     public void gettingInput() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Account number of the user");
+        System.out.println("Enter the Account number of the user for ICICBank");
         accountNumber = sc.nextLong();
-        System.out.println("Enter the Account Holder Name");
+        System.out.println("Enter the Account Holder Name for ICICBank");
         sc.nextLine();
         name = sc.nextLine();
-        System.out.println("Enter the Current balance ");
+        System.out.println("Enter the Current balance for ICICBank");
         balance = sc.nextDouble();
     
     }
@@ -79,12 +79,12 @@ class CUB extends RBI {
     
     public void gettingInput() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Account number of the user");
+        System.out.println("Enter the Account number of the user for CUB");
         accountNumber = sc.nextLong();
-        System.out.println("Enter the Account Holder Name");
+        System.out.println("Enter the Account Holder Name for CUB");
         sc.nextLine();
         name = sc.nextLine();
-        System.out.println("Enter the Current balance ");
+        System.out.println("Enter the Current balance for CUB ");
         balance = sc.nextDouble();
     
     }
@@ -117,14 +117,14 @@ public class Three {
         obj.printDetails();
 
         RBI obj1 = new IndianBank();
-        obj.gettingInput();
-        obj.calculateinterest();
-        obj.printDetails();
+        obj1.gettingInput();
+        obj1.calculateinterest();
+        obj1.printDetails();
 
 
         RBI obj2 = new CUB();
-        obj.gettingInput();
-        obj.calculateinterest();
-        obj.printDetails();
+        obj2.gettingInput();
+        obj2.calculateinterest();
+        obj2.printDetails();
     }
 }
