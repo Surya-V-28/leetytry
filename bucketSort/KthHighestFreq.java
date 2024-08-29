@@ -41,3 +41,7 @@ public class KthHighestFreq {
         }
     }
 }
+
+
+
+// 9why the the the tproblem is  not  wrking at the time of the coding 
