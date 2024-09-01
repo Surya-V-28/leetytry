@@ -4,6 +4,7 @@ int main() {
     char  str[max];
     char newStr[max];
     int turn=0;
+    do {
     printf("Enter the text to convert to ciper \n");
     scanf("%s", str);
     printf("Enter the number of the shift you wanna do \n");
@@ -22,5 +23,7 @@ int main() {
         i++;
     }
     printf("the entered string is %s", newStr);
+    
+    }while(ch=='y')
     return 0;
 }
