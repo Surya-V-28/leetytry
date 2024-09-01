@@ -25,13 +25,11 @@ public class FileOps {
     public static void main(String[] args) throws IOException {
         FileInputStream fin = new FileInputStream("example.txt");
         System.out.println("Content of the file is:");
-
         int c;
         while (fin.available() > 0) {  // Check if there are available bytes to read
             c = fin.read();            // Read the next byte
             System.out.print((char)c); // Print the character read from the file
         }
-
         fin.close();  // Close the fi
     }
 }
