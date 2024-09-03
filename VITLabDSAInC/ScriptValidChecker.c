@@ -91,7 +91,7 @@ int main() {
     }
     fclose(file);
     if(!notValid){
-        printf("correct pranenthis %d \n", top);
+        printf("correct pranenthis %d \n", top+1);
         printTheDetails();
     }
 

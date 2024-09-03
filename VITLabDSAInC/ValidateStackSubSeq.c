@@ -4,7 +4,7 @@ int top=-1;
 int main() {
     int i=0, j=0;
     int pushArr[] = {5,10,15,20,25};
-    int popArr[] = {20,15,25,5,10};
+    int popArr[] = {20, 25, 15, 10, 5};
     int newArr[10];
     for(i=0;i<5;i++){
         newArr[++top] = pushArr[i];
