@@ -1,8 +1,6 @@
 
 
 import java.util.*;
-
-
 abstract class  RBI {
     abstract void gettingInput();
     abstract void printDetails();

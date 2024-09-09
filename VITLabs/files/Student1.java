@@ -50,6 +50,7 @@ public class Student1 {
             System.out.println(e.toString());
         } catch (ClassNotFoundException e) {
             System.out.println(e.toString());
+            
         } finally {
             try {
                 if (ois != null) ois.close();
@@ -62,6 +63,7 @@ public class Student1 {
 
     static class Student implements Serializable {
         String id, name, gender, program;
+
         int age;
         static int currNo;
 
