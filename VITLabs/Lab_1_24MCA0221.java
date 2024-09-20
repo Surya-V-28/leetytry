@@ -1,7 +1,5 @@
 
 import java.util.*;
-
-
 public class Lab_1_24MCA0221 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
