@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <style>
+        table {
+            border-collapse: collapse;
+           
+        }
+        th, td {
+            border: 1px solid #000;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Product Details</h1>
+
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <td>23</td>
+        </tr>
+        <tr>
+            <th>Product Name</th>
+            <td>Toyu</td>
+        </tr>
+        <tr>
+            <th>Supplier ID</th>
+            <td>SuryaV</td>
+        </tr>
+        <tr>
+            <th>Stock Available</th>
+            <td>234</td>
+        </tr>
+        <tr>
+            <th>Opening Stock</th>
+            <td>234</td>
+        </tr>
+        <tr>
+            <th>Last Supply Date</th>
+            <td>25-10-2024</td>
+        </tr>
+        <tr>
+            <th>Unit Price</th>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <th>Edit</th>
+            <td><a href="EditProductServlet?productId=23">Edit</a></td>
+        </tr>
+        <tr>
+            <th>Delete</th>
+            <td><a href="DeleteProductServlet?productId=23">Delete</a></td>
+        </tr>
+    </table>
+
+    <h2>Another Product</h2>
+    <table>
+        <tr>
+            <th>Product ID</th>
+            <td>45</td>
+        </tr>
+        <tr>
+            <th>Product Name</th>
+            <td>Surya Army</td>
+        </tr>
+        <tr>
+            <th>Supplier ID</th>
+            <td>ArmyCorp</td>
+        </tr>
+        <tr>
+            <th>Stock Available</th>
+            <td>120</td>
+        </tr>
+        <tr>
+            <th>Opening Stock</th>
+            <td>150</td>
+        </tr>
+        <tr>
+            <th>Last Supply Date</th>
+            <td>20-09-2024</td>
+        </tr>
+        <tr>
+            <th>Unit Price</th>
+            <td>800</td>
+        </tr>
+        <tr>
+            <th>Edit</th>
+            <td><a href="EditProductServlet?productId=45">Edit</a></td>
+        </tr>
+        <tr>
+            <th>Delete</th>
+            <td><a href="DeleteProductServlet?productId=45">Delete</a></td>
+        </tr>
+    </table>
+
+    <br>
+    <a href="ViewServlet">View Products</a>
+</body>
+</html>

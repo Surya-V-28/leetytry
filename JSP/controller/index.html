@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+</head>
+<body>
+    <h1>Product Management System</h1>
+
+    <form method="post" action="AddProductServlet"> <!-- Call the AddProductServlet -->
+        Product ID: <input type="text" name="hproductId" required><br><br>
+        Product Name: <input type="text" name="hProductName" required><br><br>
+        Supplier ID: <input type="text" name="hSupplierId" required><br><br>
+        Stock Available: <input type="number" name="hStockAvailable" required><br><br>
+        Opening Stock: <input type="number" name="hOpeningStock" required><br><br>
+        Last Supply Date: <input type="date" name="hLastSupplyDate" required><br><br>
+        Unit Price: <input type="number" name="hUnitPrice" step="0.01" required><br><br>
+        <input type="submit" value="Save the Product"/>
+    </form>
+    <!-- Link to View Products -->
+    <h2>View Products</h2>
+    <a href="ViewServlet">View Product List</a>
+   
+    <p>
+
+    </p>
+</body>
+</html>
