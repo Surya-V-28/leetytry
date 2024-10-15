@@ -25,7 +25,9 @@ public class AddProductServlet extends HttpServlet {
 
         // Redirect based on the result of the operation
         if (n == 1) {
-            response.sendRedirect("success.html"); // Redirect to success HTML page
+            request.setAttribute("id", id);
+            request.getRequestDispacter("ServletPage").forward(request,response);
+            response.sendRedirect("success.html"); // Redirect to success HTML page 
         } else {
             response.sendRedirect("error.html");   // Redirect to error HTML page
         }
