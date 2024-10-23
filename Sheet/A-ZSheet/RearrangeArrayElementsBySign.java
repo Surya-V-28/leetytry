@@ -38,9 +38,7 @@ public class RearrangeArrayElementsBySign {
             i++;
         }
 
-        return nums; 
+        
     }
     
 }
-
-
