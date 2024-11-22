@@ -1,6 +1,46 @@
 import java.io.*;
 import java.util.*;
 
+
+ class Student implements Serializable {
+    private static final long serialVersionUID = 1L;
+    String id, name, gender, program;
+
+    int age;
+    static int currNo;
+
+    void get() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your id : ");
+        id = sc.next();
+        sc.nextLine();
+        System.out.println("Enter your name : ");
+        name = sc.nextLine();
+        System.out.println("Enter your age : ");
+        age = sc.nextInt();
+        System.out.println("Enter your gender : ");
+        gender = sc.next();
+        System.out.println("Enter your program : ");
+        program = sc.next();
+        System.out.println("Enter your CurrNo : ");
+        currNo = sc.nextInt();
+    }
+
+    void display() {
+        if (!program.equals("MCA")) {
+            System.out.println("Id : " + id);
+            System.out.println("Name : " + name);
+            System.out.println("Age : " + age);
+            System.out.println("Gender : " + gender);
+            System.out.println("Program : " + program);
+            System.out.println("Program : " + currNo );
+
+        } else {
+            System.out.println("Student does not belong to MCA");
+        }
+    }
+}
+
 public class Student1 {
 
     public static void main(String[] args) {
@@ -12,7 +52,7 @@ public class Student1 {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
 
-        // Serialization
+        // // Serialization
         try {
             fos = new FileOutputStream("ObjectStream.txt");
             oos = new ObjectOutputStream(fos);
@@ -61,41 +101,5 @@ public class Student1 {
         }
     }
 
-    static class Student implements Serializable {
-        String id, name, gender, program;
-
-        int age;
-        static int currNo;
-
-        void get() {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter your id : ");
-            id = sc.next();
-            sc.nextLine();
-            System.out.println("Enter your name : ");
-            name = sc.nextLine();
-            System.out.println("Enter your age : ");
-            age = sc.nextInt();
-            System.out.println("Enter your gender : ");
-            gender = sc.next();
-            System.out.println("Enter your program : ");
-            program = sc.next();
-            System.out.println("Enter your CurrNo : ");
-            currNo = sc.nextInt();
-        }
-
-        void display() {
-            if (program.equals("MCA")) {
-                System.out.println("Id : " + id);
-                System.out.println("Name : " + name);
-                System.out.println("Age : " + age);
-                System.out.println("Gender : " + gender);
-                System.out.println("Program : " + program);
-                System.out.println("Program : " + currNo );
-
-            } else {
-                System.out.println("Student does not belong to MCA");
-            }
-        }
-    }
+  
 }

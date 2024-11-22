@@ -10,7 +10,7 @@ public class UDPReceiver {
         // Keep listening for incoming packets
         while (true) {
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-
+ 
             socket.receive(packet);
 
             // Extract the received message and split it to get the numbers
