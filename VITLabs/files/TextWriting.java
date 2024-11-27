@@ -1,9 +1,11 @@
+
 import java.io.*;
 
 public class TextWriting {
+
     public static void main(String[] args) {
         String filename = "persons.txt"; // File to write to
-        String newContent = "Surya is here what does need buddy.\n";
+        String newContent = "Surya is here what does need buddy.n";
 
         // Append new content to the file using byte streams
         try (FileOutputStream fos = new FileOutputStream(filename, true)) { // 'true' enables append mode
@@ -20,7 +22,7 @@ public class TextWriting {
             String readContent = "";
             // Read byte by byte and append to the StringBuilder
             while ((byteData = fis.read()) != -1) {
-                readContent+=((char) byteData);
+                readContent += ((char) byteData);
             }
 
             // Output the content read from the file
