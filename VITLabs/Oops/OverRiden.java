@@ -17,5 +17,7 @@ public class OverRiden {
         
         Parent p = new Child();
         p.staticMethod(); // Output: Static method in Parent (resolved based on reference type)
+        Parent p2 = new Parent();
+        p2.staticMethod();
     }
 }

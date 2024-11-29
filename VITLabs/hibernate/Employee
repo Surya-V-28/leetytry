@@ -1,4 +1,4 @@
-public class SafeDivisionExample {
+ class SafeDivisionExample {
     private static int A = 5; // Initial value of A
     private static int B;
     private static int C = 10; // Some value for C

@@ -1,63 +1,52 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.vit.hib.util;
 
-class SharedValues {
+import com.vit.hib.entity.Course;
+import java.util.Properties;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.cfg.Environment;
+import org.hibernate.service.ServiceRegistry;
 
-    public int aLock = 1;
-    int a = 5;
-    int b = 0;
-    int c = 2;
-}
+/**
+ *
+ * @author Admin
+ */
+public class HibernateUtil {
+    private static SessionFactory sessionFactory;
+    public static SessionFactory getSessionFactory() {
+        if (sessionFactory == null) {
+            try {
+                Configuration configuration = new Configuration();
 
-public class EmployeeDAO {
+                // Hibernate settings equivalent to hibernate.cfg.xml's properties
+                Properties settings = new Properties();
+                settings.put(Environment.DRIVER, "org.postgresql.Driver");
+                settings.put(Environment.URL, "jdbc:postgresql://localhost:5432/postgres");
+                settings.put(Environment.USER, "postgres");
+                settings.put(Environment.PASS, "admin");
+                settings.put(Environment.SHOW_SQL, "true");
 
-    public static void main(String[] args) {
-        SharedValues sharedValues = new SharedValues();
+                settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-        Thread thread0 = new Thread() {
-            public void run() {
-                while (true) {
-                    while (sharedValues.aLock <= 0) {
-                        --sharedValues.aLock;
-                    }
+                //settings.put(Environment.HBM2DDL_AUTO, "create-drop");
+                settings.put(Environment.HBM2DDL_AUTO, "update");
+                configuration.setProperties(settings);
 
-                    if (sharedValues.a != 0) {
-                        sharedValues.b = sharedValues.c / sharedValues.a;
-                    }
+                configuration.addAnnotatedClass(Course.class);
 
-                    ++sharedValues.aLock;
+                ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+                    .applySettings(configuration.getProperties()).build();
 
-                    System.out.println("a = " + sharedValues.a);
-                }
+                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        };
-
-        Thread thread1 = new Thread() {
-            public void run() {
-                for (int i = 5; i >= 0; --i) {
-                    while (sharedValues.aLock <= 0) {
-                        --sharedValues.aLock;
-                    }
-
-                    sharedValues.a = i;
-
-                    ++sharedValues.aLock;
-
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException exception) {
-                        throw new RuntimeException(exception);
-                    }
-                }
-            }
-        };
-
-        thread0.start();
-        thread1.start();
-
-        try {
-            thread0.join();
-            thread1.join();
-        } catch (Exception exception) {
-            throw new RuntimeException(exception);
         }
+        return sessionFactory;
     }
 }
