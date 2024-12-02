@@ -5,12 +5,10 @@ import java.util.*;
 public class ReorderRoutes {
 
     public static int dfs(int currentNode, int n, int[][] connections, ArrayList<ArrayList<Integer>> ls, boolean[] visited, int result) {
-
         if (visited[currentNode]) {
             return result;
         }
         visited[currentNode] = true;
-
         for (int a : ls.get(currentNode)) {
             if (!visited[Math.abs(a)]) {
                 if (a > 0) {
@@ -18,7 +16,6 @@ public class ReorderRoutes {
                 }
                 result = dfs(Math.abs(a), n, connections, ls, visited, result);
             }
-
         }
         return result;
     }
@@ -32,7 +29,6 @@ public class ReorderRoutes {
 
         for (int i = 0; i < n; i++) {
             ls.add(new ArrayList<Integer>());
-
         }
         boolean[] visited = new boolean[n];
 
