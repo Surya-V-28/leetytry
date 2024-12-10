@@ -3,48 +3,40 @@ import java.util.*;
 
 public class MinimunNumberOfBalls {
 
-    public static void main(String args[]) {
+    public static boolean canDivide(int penalty, int[] nums, int maxOperations) {
+        int operations = 0;
+        for (int num : nums) {
+            if (num > penalty) {
+                // Calculate the number of splits required to reduce the size <= penalty
+                operations += (num - 1) / penalty;
+            }
+            if (operations > maxOperations) {
+                return false; // Exceeds allowed operations
+            }
+        }
+
+        return true;
+    }
+
+    public static void main(String[] args) {
         System.out.println("working");
         int[] nums = {9};
         int maxOperations = 2;
-        int currAns = 0;
-        ArrayList<Integer> arr = new ArrayList<>();
 
-        for (int i = 0; i < nums.length; i++) {
-            arr.add(nums[i]);
-        }
+        // Binary search for the minimum penalty
+        int left = 1;
+        int right = Arrays.stream(nums).max().getAsInt();
+        int result = right;
 
-        while (maxOperations > 0) {
-            Collections.sort(arr);
-            System.out.println("curr Ans is " + maxOperations);
-            int numMax = arr.get(arr.size() - 1);
-            if (numMax == 0) {
-                System.out.print("answer is came");
-            } else if (numMax % 2 == 0) {
-                numMax = arr.get(arr.size() - 1);
-                arr.remove(arr.size() - 1);
-                arr.add(numMax / 2);
-                arr.add(numMax / 2);
-                currAns = numMax / 2;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (canDivide(mid, nums, maxOperations)) {
+                result = mid; // Update the result to the current penalty
+                right = mid - 1; // Try smaller penalty
             } else {
-
-                numMax = arr.get(arr.size() - 1);
-                arr.remove(arr.size() - 1);
-                if (!arr.isEmpty()) {
-                    arr.add(arr.get(arr.size() - 1));
-                    arr.add(numMax - arr.get(arr.size() - 1));
-                } else {
-
-                    arr.add(3);
-                    arr.add(numMax - 3);
-
-                }
-                currAns = (numMax / 2) + 1;
+                left = mid + 1; // Increase penalty
             }
-            System.out.println("array list is  " + arr);
-            maxOperations--;
         }
-        System.out.println("curr Ans is " + currAns);
-        System.out.println("array list is  " + arr);
+        System.out.println("Minimum possible penalty: " + result);
     }
 }

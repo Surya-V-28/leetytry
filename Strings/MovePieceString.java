@@ -1,57 +1,55 @@
 
 public class MovePieceString {
 
-    public static String leftShift(int index, String start, int indextobePlaced) {
-
-        for (int i = index; i < start.length(); i++) {
-            if (start.charAt(i) == 'R') {
-                System.out.println("Errors");
-                break;
-            } else if (start.charAt(i) == 'L') {
-                int j = i;
-
-                while (j > 0 && start.charAt(j - 1) == '_') {
-                    if (j == indextobePlaced) {
-                        break;
-                    }
-                    System.out.println("Swap between the j " + j + " and  j1 " + ((int) j - 1));
-                    j--;
-                }
-
-            }
-        }
-        return start;
-    }
-
-    public static String RightShift(int index, String start, int indextobePlaced) {
-
-        for (int i = index; i < start.length(); i++) {
-            if (start.charAt(index) == 'L') {
-                System.out.println("Errors in the Right Block");
-                break;
-            }
-        }
-        return start;
-    }
-
     public static void main(String args[]) {
 
         String start = "_L__R__R_";
         String target = "L______RR";
-        int stPointer = 0;
 
-        for (int i = 0; i < target.length(); i++) {
-            if (start.charAt(stPointer) == target.charAt(i)) {
-                stPointer++;
-            } else if (target.charAt(i) == 'L') {
-                leftShift(stPointer, start, i);
-                break;
-            } else {
-                RightShift(stPointer, start, i);
-                break;
+        if (start.equals(target)) {
+            System.out.println("Answer is correct for the codde");
+        }
+        int waitL = 0;
+        int waitR = 0;
 
+        for (int i = 0; i < start.length(); i++) {
+            char startS = start.charAt(i);
+            char goal = target.charAt(i);
+
+            if (startS == 'R') {
+                if (waitL > 0) {
+                    System.err.println("False");
+                    break;
+                }
+                waitR++;
+            }
+            if (goal == 'L') {
+                if (waitL > 0) {
+                    System.out.print("False");
+                    break;
+                }
+                waitL++;
             }
 
+            if (goal == 'R') {
+                if (waitR == 0) {
+                    System.out.println("False");
+                    break;
+                }
+                waitR--;
+            }
+            if (startS == 'L') {
+                if (waitL == 0) {
+                    System.out.println("False");
+                    break;
+                }
+                waitL--;
+            }
+
+        }
+
+        if (waitL == 0 && waitR == 0) {
+            System.out.println("True");
         }
 
     }
