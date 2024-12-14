@@ -1,14 +1,31 @@
 
 import java.util.*;
 
+class ElementsWithIndex {
+
+    int index;
+    int value;
+
+    public ElementsWithIndex(int val, int ind) {
+        index = ind;
+        value = val;
+    }
+}
+
 public class FindMaxScore {
 
     public static void main(String args[]) {
         int[] nums = {2, 3, 5, 1, 3, 2};
-        int[] copied = Arrays.copyOf(nums, nums.length);
-        Arrays.sort(copied);
+        ElementsWithIndex[] elements = new ElementsWithIndex[nums.length];
+
+        for (int i = 0; i < nums.length; i++) {
+            elements[i] = new ElementsWithIndex(nums[i], i);
+        }
+        Arrays.sort(elements, Comparator.comparingInt(e -> e.value));
+
         int score = 0;
         int numsIndex = 0;
+        int copied[] = nums;
         boolean[] visited = new boolean[nums.length];
         while (numsIndex < nums.length) {
             for (int i = 0; i < nums.length; i++) {

@@ -12,7 +12,6 @@ public class SecondLargest {
                 System.out.println("Printing the answers" + arr[i]);
                 break;
             }
-
         }
     }
 
