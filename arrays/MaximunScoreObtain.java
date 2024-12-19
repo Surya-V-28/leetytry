@@ -60,9 +60,7 @@ class Solution {
         for (int i = 1; i < cardPoints.length; i++) {
             preSum[i] = preSum[i - 1] + cardPoints[i];
         }
-
         int ans = preSum[k - 1]; // Case: All k cards are taken from the front.
-
         // Iterate over all combinations of front and back
         for (int i = 0; i <= k; i++) {
             int frontSum = i > 0 ? preSum[i - 1] : 0; // First i cards
