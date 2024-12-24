@@ -30,7 +30,6 @@ public class MaximunScoreSubSequence {
             ans = Math.max(ans, (long) sumofArr * minQueue);
             return;
         }
-
         for (int j = start; j < nums1.length; j++) {
             arr.add(nums1[j]);
             q.add(nums2[j]);
@@ -38,7 +37,6 @@ public class MaximunScoreSubSequence {
             arr.remove(arr.size() - 1);
             q.remove(q.size() - 1);
         }
-
     }
 
     public static long DpApproach(int[] nums1, int[] nums2, int ans, int k) {

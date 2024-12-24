@@ -10,7 +10,6 @@ public class SmallestNumberInfiniteSet {
         for (int i = 0; i < 1001; i++) {
             q.add(i);
         }
-
     }
 
     public int popSmallest() {
@@ -18,12 +17,11 @@ public class SmallestNumberInfiniteSet {
     }
 
     public void addBack(int num) {
-        if(q.peek()>num){
-        q.add(num);
+        if (q.peek() > num) {
+            q.add(num);
         }
     }
 
     public static void main(String[] args) {
-
     }
 }
