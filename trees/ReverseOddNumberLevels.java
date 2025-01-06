@@ -34,7 +34,7 @@ class Solution {
 
     public TreeNode reverseOddLevels(TreeNode root) {
         if (root == null) {
-            return null;
+            return root;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
