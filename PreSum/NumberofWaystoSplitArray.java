@@ -14,7 +14,6 @@ public class NumberofWaystoSplitArray {
         for (int i = nums.length - 2; i >= 0; i--) {
             rPreSum[i] = rPreSum[i + 1] + nums[i];
         }
-
         System.out.println(" forend ");
         for (int i = 0; i < fPreSum.length; i++) {
             System.out.print(fPreSum[i] + " , ");
