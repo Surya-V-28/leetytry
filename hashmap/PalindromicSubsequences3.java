@@ -11,16 +11,15 @@ class Pair {
         mid = _mid;
         outer = _outer;
     }
+
 }
 
 public class PalindromicSubsequences3 {
 
     public static void main(String[] args) {
         System.out.print("Working");
-
         String s = "aabca";
         int ans = 0;
-
         HashMap<Character, Integer> hash = new HashMap<>();
         HashSet<Character> set = new HashSet<>();
         HashSet<Pair> setAns = new HashSet<>();
@@ -38,8 +37,6 @@ public class PalindromicSubsequences3 {
             }
             set.add(s.charAt(i));
         }
-
         System.out.println("the answer for the solution is " + setAns.size());
-
     }
 }
