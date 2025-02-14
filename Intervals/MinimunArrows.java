@@ -25,6 +25,5 @@ public class MinimunArrows {
             }
         }
         System.out.println("the result is " + res);
-
     }
 }
