@@ -8,9 +8,13 @@ public class PremutatuionOfString {
             arr.add(CurrWord);
             return;
         }
-        for (int i = start; i < givenString.length(); i++) {
-            generateAll(i + 1, arr, CurrWord += givenString.charAt(i), givenString);
-            generateAll(i + 1, arr, CurrWord, givenString);nasfdbj
+
+        for (int i = 0; i < givenString.length(); i++) {
+            if ((CurrWord.indexOf(givenString.charAt(i))) == -1) {
+                CurrWord += givenString.charAt(i);
+                generateAll(i + 1, arr, CurrWord, givenString);
+                CurrWord = CurrWord.substring(0, CurrWord.length() - 1);
+            }
         }
 
     }
