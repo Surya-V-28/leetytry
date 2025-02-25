@@ -22,7 +22,7 @@ public class MinimunWindowSearch {
         for (int right = 0; right < s.length(); right++) {
             crr.put(s.charAt(right), crr.getOrDefault(s.charAt(right), 0) + 1);
 
-            if (hashT.containsKey(s.charAt(right)) && hashT.get(s.charAt(right)) == crr.get(s.charAt(right))) {
+            if (hashT.containsKey(s.charAt(right)) && hashT.get(s.charAt(right)).equals(crr.get(s.charAt(right)))) {
                 have++;
             }
 
