@@ -114,9 +114,9 @@ public class SlindingWindowArrays {
         // 2. Finding the count of the Subarrays with given Sum = k
         // 3. Find the Longest Subarray size with given distant characters in it;
 
-    
 
-/// Number of Substrings Containing All Three Characters or the give characters in Strings
+
+    /// Number of Substrings Containing All Three Characters or the give characters in Strings
 
     }
 }
