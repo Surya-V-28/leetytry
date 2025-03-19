@@ -1,40 +1,22 @@
-
-import java.io.*;
-import java.util.*;
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Thread: " + i);
+        }
+    }
+}
 
 public class Solution {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.run();
 
-    public void solve() throws IOException {
-        // Use BufferedReader for fast input reading
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        // Read input strings
-        String s1 = br.readLine().trim();
-        String s2 = br.readLine().trim();
-
-        // Create a mapping of characters based on their order in s1
-        LinkedHashMap<Character, Character> mapping = new LinkedHashMap<>();
-        int index = 0;
-
-        // Preserve order while removing duplicates
-        for (char c : s1.toCharArray()) {
-            if (!mapping.containsKey(c)) {
-                mapping.put(c, (char) ('a' + index));
-                index++;
-            }
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Main: " + i);
         }
-
-        // Transform s2 using the mapping
-        StringBuilder result = new StringBuilder();
-        for (char c : s2.toCharArray()) {
-            result.append(mapping.get(c));
-        }
-
-        // Print the transformed string
-        System.out.println(result);
     }
 
-    public static void main(String[] args) throws IOException {
-        new Solution().solve();
+    public static void Mains(String args[]){
+        System.out.println("Working on the ANSWER ");
     }
 }

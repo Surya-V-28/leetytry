@@ -3,20 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
-    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <title>Basic Form</title>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(document.getElementById('userForm'));
+            const formDetails = {};
+            formData.forEach((value, key) => {
+                formDetails[key] = value;
+            });
+
+            // Display the form data on the "done" page
+            const resultPage = window.open("", "donePage");
+            resultPage.document.write("<h1>Form Submitted Successfully!</h1>");
+            resultPage.document.write("<h2>Submitted Details:</h2>");
+            resultPage.document.write("<ul>");
+            for (const key in formDetails) {
+                resultPage.document.write(`<li><strong>${key}</strong>: ${formDetails[key]}</li>`);
+            }
+            resultPage.document.write("</ul>");
+        }
+    </script>
 </head>
 <body>
-    <h1>Video Player</h1>
-    <video id="videoPlayer" controls>
-        <source type="application/dash+xml" id="videoSource">
-        Your browser does not support the video tag.
-    </video>
 
-    <script>
-        var url = 'http://localhost:8080/video/PDFDrnd.mpd'; // Your backend MPD URL
-        var player = dashjs.MediaPlayer().create();
-        player.initialize(document.querySelector("#videoPlayer"), url, true);
-    </script>
+    <h1>User Details Form</h1>
+    <form id="userForm" onsubmit="handleSubmit(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female">
+        <label for="female">Female</label><br><br>
+
+        <label for="color">Favorite Color:</label>
+        <input type="color" id="color" name="color"><br><br>
+
+        <label for="file">Upload a File:</label>
+        <input type="file" id="file" name="file"><br><br>
+
+        <label for="newsletter">Subscribe to Newsletter:</label>
+        <input type="checkbox" id="newsletter" name="newsletter" value="yes"><br><br>
+
+        <label for="rating">Rating:</label>
+        <input type="range" id="rating" name="rating" min="1" max="5" step="1"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="USA">USA</option>
+            <option value="India">India</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
 </body>
 </html>
